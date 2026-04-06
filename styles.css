@@ -1,0 +1,88 @@
+/**
+ * styles.css
+ * Styles for the Toxic Productivity Screening Web Application
+ */
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f0f4c3, #b2ebf2);
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(to bottom, #f0f4c3, #b2ebf2);
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Color Schemes */
+.domain-emotional {
+    background-color: #f28b82; /* Emotional Domain Color */
+}
+.domain-physical {
+    background-color: #fbf684; /* Physical Domain Color */
+}
+.domain-social {
+    background-color: #ccff90; /* Social Domain Color */
+}
+.domain-work {
+    background-color: #a7ffeb; /* Work Domain Color */
+}
+
+/* Buttons */
+.button {
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #1565c0;
+}
+
+/* Cards */
+.card {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+}
+
+/* Forms */
+input[type='text'], input[type='email'], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type='submit'] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: #45a049;
+}
