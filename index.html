@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Toxic Productivity Screening Assessment</title>
+</head>
+<body>
+    <header>
+        <h1>Toxic Productivity Screening Assessment</h1>
+    </header>
+    <main>
+        <section id="assessment">
+            <h2>Assessment</h2>
+            <form id="assessment-form">
+                <h3>Sleep Domain</h3>
+                <label>1. How well do you sleep at night?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>2. Do you feel rested when you wake up?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>3. Do you keep a consistent sleep schedule?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <h3>Digital Domain</h3>
+                <label>4. How often do you check your phone? </label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>5. Do you feel overwhelmed by digital notifications?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>6. How many hours do you spend online per day?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <h3>Psychological Domain</h3>
+                <label>7. Do you often feel stressed or anxious?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>8. How do you rate your overall mood?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>9. Do you take breaks during your work?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <h3>Lifestyle Domain</h3>
+                <label>10. How do you rate your physical activity?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>11. Do you maintain a balanced diet?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <label>12. How do you manage your free time?</label>
+                <div class="likert">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>Results</h2>
+            <div id="score"></div>
+            <div id="category"></div>
+        </section>
+        <section id="action-plan">
+            <h2>Personal Action Plan</h2>
+            <textarea placeholder="Write your action plan here..."></textarea>
+        </section>
+        <section id="progress-tracking">
+            <h2>Progress Tracking</h2>
+            <div id="tracking"></div>
+        </section>
+        <section id="health-risks">
+            <h2>Health Risks</h2>
+            <div id="risks"></div>
+        </section>
+        <section id="call-to-action">
+            <h2>Call to Action</h2>
+            <p>Take charge of your productivity and health today!</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
