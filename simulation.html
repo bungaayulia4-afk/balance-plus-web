@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Simulation - BALANCE+</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>FUTURE IMPACT SIMULATION</h1>
+            <p>"If you continue this habit…"</p>
+        </header>
+
+        <!-- Warning Box -->
+        <section class="simulation-card warning">
+            <h2>⚠️ Current Trajectory</h2>
+            <div class="sim-metric">
+                <label>📉 Energy Trend:</label>
+                <span class="trend-down">Decreasing</span>
+            </div>
+            <div class="sim-metric">
+                <label>📈 Obesity Risk:</label>
+                <span class="trend-up">Increasing</span>
+            </div>
+            <div class="sim-metric">
+                <label>😴 Fatigue Level:</label>
+                <span class="trend-up">High</span>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="timeline-section">
+            <h3>Timeline Projection:</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker day-1">Day 1</div>
+                <div class="timeline-status">✓ Normal</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker day-7">Day 7</div>
+                <div class="timeline-status">⚠️ Tired</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker day-30">Day 30</div>
+                <div class="timeline-status">❌ High Risk</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker day-90">Day 90</div>
+                <div class="timeline-status">🚨 Critical</div>
+            </div>
+        </section>
+
+        <!-- Positive Path -->
+        <section class="simulation-card success">
+            <h2>✨ If You Change Today</h2>
+            <p>Following the action plan can improve your health by:</p>
+            <ul>
+                <li>⬆️ Energy levels: +40% in 2 weeks</li>
+                <li>⬇️ Fatigue: -50% in 3 weeks</li>
+                <li>📉 Obesity risk: Neutral in 1 month</li>
+            </ul>
+        </section>
+
+        <!-- Action Button -->
+        <button class="btn-primary btn-large" onclick="startChange()">
+            Reset My Habit Path
+        </button>
+
+        <button class="btn-secondary" onclick="navigateTo('index.html')">
+            Back to Dashboard
+        </button>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function startChange() {
+            alert('🌟 Great decision! Start with the daily habits and track your progress.');
+            navigateTo('action-plan.html');
+        }
+
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
