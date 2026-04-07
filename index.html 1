@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE+ - Your Habits, Guided Smarter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="brand">BALANCE+</h1>
+                <p class="tagline">"Your habits, guided smarter"</p>
+            </div>
+            <div class="header-right">
+                <button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
+            </div>
+        </header>
+
+        <!-- Body Balance Status -->
+        <section class="status-card">
+            <h2>🟡 BODY BALANCE STATUS</h2>
+            <div class="status-badge" id="statusBadge">UNSTABLE</div>
+            
+            <div class="metric">
+                <label>Energy Level:</label>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="energyLevel" style="width: 40%;"></div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <label>Fatigue Risk:</label>
+                <span class="risk-high">HIGH</span>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="actions-container">
+            <button class="btn-primary" onclick="navigateTo('daily-check.html')">
+                ✅ Start Daily Check
+            </button>
+            <button class="btn-secondary" onclick="navigateTo('progress.html')">
+                📈 View My Progress
+            </button>
+        </section>
+
+        <!-- Today Insight -->
+        <section class="insight-card">
+            <h3>📊 TODAY INSIGHT</h3>
+            <p id="insightText">"Low activity and high screen time detected."</p>
+        </section>
+
+        <!-- Quick Actions Menu -->
+        <section class="quick-actions">
+            <div class="action-btn" onclick="navigateTo('smart-plate.html')">🥗 Meal Guide</div>
+            <div class="action-btn" onclick="navigateTo('action-plan.html')">🚶 Move Now</div>
+            <div class="action-btn" onclick="showAlert('Time to take a screen break!')">📱 Screen Break</div>
+        </section>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Load dashboard data
+        function loadDashboard() {
+            const userData = getUserData();
+            if (userData) {
+                updateStatusBadge(userData.lastAnalysis);
+            }
+        }
+
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        function showAlert(msg) {
+            alert(msg);
+        }
+
+        function goToProfile() {
+            alert('Profile Page - Coming Soon');
+        }
+
+        // Update status badge based on analysis
+        function updateStatusBadge(analysis) {
+            const badge = document.getElementById('statusBadge');
+            if (analysis && analysis.lifestyleRisk === 'HIGH') {
+                badge.textContent = 'UNSTABLE';
+                badge.style.color = '#ff6b6b';
+            } else {
+                badge.textContent = 'STABLE';
+                badge.style.color = '#51cf66';
+            }
+        }
+
+        loadDashboard();
+    </script>
+</body>
+</html>
