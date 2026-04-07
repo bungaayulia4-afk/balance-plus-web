@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Plan - BALANCE+</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>YOUR SMART ACTION PLAN</h1>
+            <p>Actionable steps for today</p>
+        </header>
+
+        <!-- Food Guide -->
+        <section class="action-card">
+            <h2>🥗 FOOD GUIDE</h2>
+            <ul id="foodGuide">
+                <li>✓ Add vegetables to your next meal</li>
+                <li>✓ Replace sugary drink with water</li>
+                <li>✓ Eat more protein-rich foods</li>
+            </ul>
+        </section>
+
+        <!-- Movement Guide -->
+        <section class="action-card">
+            <h2>🚶 MOVEMENT GUIDE</h2>
+            <ul id="movementGuide">
+                <li>✓ Stand up for 2 minutes</li>
+                <li>✓ Shoulder stretch</li>
+                <li>✓ 10-minute walk after meals</li>
+            </ul>
+        </section>
+
+        <!-- Digital Habit -->
+        <section class="action-card">
+            <h2>📱 DIGITAL HABIT</h2>
+            <ul id="digitalGuide">
+                <li>✓ Take 10 min screen break</li>
+                <li>✓ Avoid late-night scrolling</li>
+                <li>✓ Use blue light filter after 8pm</li>
+            </ul>
+        </section>
+
+        <!-- Action Button -->
+        <button class="btn-primary btn-large" onclick="startReset()">
+            Start My Reset Today
+        </button>
+
+        <button class="btn-secondary" onclick="navigateTo('smart-plate.html')">
+            View Smart Plate Guide
+        </button>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function startReset() {
+            const userData = getUserData();
+            userData.lastReset = new Date().toISOString();
+            saveUserData(userData);
+            alert('🎉 Reset started! Check back tomorrow.');
+            navigateTo('index.html');
+        }
+
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
