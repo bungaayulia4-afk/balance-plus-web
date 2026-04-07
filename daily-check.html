@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Habit Check - BALANCE+</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Daily Habit Check</h1>
+            <p>"Tell us about your day"</p>
+        </header>
+
+        <form id="dailyForm" class="form-container">
+            
+            <!-- Sleep Duration -->
+            <div class="form-group">
+                <label>💤 Sleep Duration</label>
+                <input type="range" id="sleep" min="1" max="12" value="6" class="slider">
+                <div class="slider-label">
+                    <span id="sleepValue">6</span>h
+                </div>
+            </div>
+
+            <!-- Screen Time -->
+            <div class="form-group">
+                <label>📱 Screen Time</label>
+                <input type="range" id="screen" min="1" max="10" value="5" class="slider">
+                <div class="slider-label">
+                    <span id="screenValue">5</span>/10
+                </div>
+            </div>
+
+            <!-- Food Type -->
+            <div class="form-group">
+                <label>🍽️ Food Type Today</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="foodType" value="balanced"> Balanced</label>
+                    <label><input type="radio" name="foodType" value="mixed"> Mixed</label>
+                    <label><input type="radio" name="foodType" value="fastfood"> Fast Food Dominant</label>
+                </div>
+            </div>
+
+            <!-- Physical Activity -->
+            <div class="form-group">
+                <label>🚶 Physical Activity</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="activity" value="low"> Low</label>
+                    <label><input type="radio" name="activity" value="moderate"> Moderate</label>
+                    <label><input type="radio" name="activity" value="active"> Active</label>
+                </div>
+            </div>
+
+            <!-- Water Intake -->
+            <div class="form-group">
+                <label>💧 Water Intake</label>
+                <input type="range" id="water" min="1" max="12" value="5" class="slider">
+                <div class="slider-label">
+                    <span id="waterValue">5</span> Glasses
+                </div>
+            </div>
+
+            <!-- Weight & Height -->
+            <div class="form-group">
+                <label>⚖️ Weight (kg):</label>
+                <input type="number" id="weight" placeholder="60" min="20" max="200" value="60">
+            </div>
+
+            <div class="form-group">
+                <label>📏 Height (cm):</label>
+                <input type="number" id="height" placeholder="165" min="100" max="250" value="165">
+            </div>
+
+            <button type="submit" class="btn-primary btn-large">ANALYZE MY BALANCE</button>
+        </form>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/bmi.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Real-time slider value update
+        document.getElementById('sleep').addEventListener('input', (e) => {
+            document.getElementById('sleepValue').textContent = e.target.value;
+        });
+
+        document.getElementById('screen').addEventListener('input', (e) => {
+            document.getElementById('screenValue').textContent = e.target.value;
+        });
+
+        document.getElementById('water').addEventListener('input', (e) => {
+            document.getElementById('waterValue').textContent = e.target.value;
+        });
+
+        // Form submission
+        document.getElementById('dailyForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const data = {
+                sleep: document.getElementById('sleep').value,
+                screen: document.getElementById('screen').value,
+                foodType: document.querySelector('input[name="foodType"]:checked')?.value,
+                activity: document.querySelector('input[name="activity"]:checked')?.value,
+                water: document.getElementById('water').value,
+                weight: parseFloat(document.getElementById('weight').value),
+                height: parseFloat(document.getElementById('height').value),
+                date: new Date().toISOString()
+            };
+
+            // Validate
+            if (!data.foodType || !data.activity) {
+                alert('Please fill all fields!');
+                return;
+            }
+
+            // Save and analyze
+            saveUserData(data);
+            analyzeHabits(data);
+            window.location.href = 'result.html';
+        });
+    </script>
+</body>
+</html>
